@@ -86,7 +86,7 @@ bag.close()
 # MPPI code.
 
 # We have collected:
-# raw_datas = [ x, y, theta, v, delta, dt]
+# raw_datas = [ x, y, theta, v, delta, time]
 # We want to have:
 # x_datas[i,  :] = [x_dot, y_dot, theta_dot, sin(theta), cos(theta), v, delta, dt]
 # y_datas[i-1,:] = [x_dot, y_dot, theta_dot ]
