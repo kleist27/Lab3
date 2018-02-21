@@ -33,7 +33,7 @@ topics = [t1,t2,t3]
 min_datas = tandt[1][t3][1] # number of t3 messages is less than t1, t2
 
 INPUT_SIZE=8
-OUTPUT_SIZE=8
+OUTPUT_SIZE=3
 DATA_SIZE=6
 
 raw_datas = np.zeros((min_datas,DATA_SIZE))
@@ -88,8 +88,8 @@ bag.close()
 # We have collected:
 # raw_datas = [ x, y, theta, v, delta, dt]
 # We want to have:
-# x_datas[i-1,:] = [x_dot, y_dot, theta_dot, sin(theta), cos(theta), v, delta, dt]
-# y_datas[i,  :] = [x_dot, y_dot, theta_dot ]
+# x_datas[i,  :] = [x_dot, y_dot, theta_dot, sin(theta), cos(theta), v, delta, dt]
+# y_datas[i-1,:] = [x_dot, y_dot, theta_dot ]
 
 raw_datas = raw_datas[:idx, :] # Clip to only data found from bag file
 raw_datas = raw_datas[ np.abs(raw_datas[:,3]) < 0.75 ] # discard bad controls
